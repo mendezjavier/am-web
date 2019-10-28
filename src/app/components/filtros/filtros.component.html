@@ -1,0 +1,69 @@
+
+<div class="card container-filter-card" >
+        <div class="card-header " >
+            Filtros
+            <fa class="filter-icon icon-filter-header" name="caret-up" *ngIf="!closeFilters" (click)="closeFilters = !closeFilters"></fa>
+            <fa class="filter-icon icon-filter-header" name="caret-down" *ngIf="closeFilters" (click)="closeFilters = !closeFilters"></fa>
+        </div>
+    <ul class="list-group list-group-flush" [ngClass]="{'hide-panel': closeFilters,'show-panel': !closeFilters}">
+    <form #f="ngForm" (ngSubmit)="applyFilter()">
+        <li class="list-group-item">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 header-filter" (click)="closeFiltersName = !closeFiltersName" >
+                        <!-- <fa  name="search" class=" beg-icon"></fa> -->
+                        <div class="search-icon" >
+                            </div>
+                        <span>Nombre del hotel</span>
+                        <fa class="filter-icon" name="caret-up" *ngIf="!closeFiltersName"></fa>
+                        <fa class="filter-icon" name="caret-down" *ngIf="closeFiltersName"></fa>
+                    </div>
+                    <div class="col-12 container-filter" [ngClass]="{'hide-panel': closeFiltersName}">
+                            
+                                    <div class="row">
+                                        <div class="col-8">
+                                        <input type="text" name="name" [(ngModel)]="filter.name" class="form-control" placeholder="Ingrese el nombre del hotel">
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="submit"  class="btn btn-primary bg-am mb-2">Aceptar</button>
+                                        </div>
+                                    </div>
+                                    
+                        </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 header-filter" (click)="closeFiltersStars = !closeFiltersStars" >
+                            <fa  name="star" class=" beg-icon"></fa>
+                            <span>Estrellas</span>
+                            <fa class="filter-icon" name="caret-up" *ngIf="!closeFiltersStars"></fa>
+                            <fa class="filter-icon" name="caret-down" *ngIf="closeFiltersStars"></fa>                    
+                        </div>
+                        <div class="col-12 container-filter" [ngClass]="{'hide-panel': closeFiltersStars}">
+                                <div class="form-check filter-check" *ngFor="let check of stars_check; let i=index;">
+                                    <div class="row">
+                                        <div class="col2">
+                                                <input class="form-check-input"  name="stars" type="checkbox" [checked]="check.selected" (change)="checkStar(check.stars, !check.selected)" value="{{check.stars}}" >
+                                        </div>
+                                        <div class="col-10">
+                                                <label *ngIf="check.stars == 0" class="form-check-label filter-label" >
+                                                        {{ check.label }}
+                                                </label>
+                                                <app-stars *ngFor="let star of ' '.repeat(check.stars).split('')"></app-stars>                                        </div>
+                                    </div>
+                                    <!-- <input class="form-check-input"  name="stars" type="checkbox" [checked]="check.selected" (change)="checkStar(check.stars, !check.selected)" value="{{check.stars}}" >
+                                        <label *ngIf="check.stars == 0" class="form-check-label filter-label" >
+                                                {{ check.label }}
+                                        </label>
+                                        <app-stars *ngFor="let star of ' '.repeat(check.stars).split('')"></app-stars> -->
+                                </div>  
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </form>
+    </ul>
+    </div> 

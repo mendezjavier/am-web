@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.container-fluid { 
+    padding-top: 20px;
+}
+
+.bg-am {
+    background-color: #092874!important;
+}

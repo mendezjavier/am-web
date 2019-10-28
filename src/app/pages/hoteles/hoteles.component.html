@@ -1,0 +1,19 @@
+<!-- <p>hoteles works!</p> -->
+<div class="row">
+    <div class="col-lg-3 col-md-12">
+        <app-filtros [filter]="filters" (apply)="applyFilter($event)"></app-filtros>
+    </div>
+    <div class="col-lg-9 col-md-12">
+            <div *ngIf="loading" class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+            <div *ngIf="!loading && hotels.length === 0" class="alert alert-danger" role="alert">
+                No se han encontrado resultados
+            </div>
+
+            <app-hotel *ngFor="let hotel of hotels" [data]="hotel"></app-hotel>
+    </div>
+</div>

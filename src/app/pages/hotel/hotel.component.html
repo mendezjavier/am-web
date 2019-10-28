@@ -1,0 +1,43 @@
+
+<div class="card card-hotel shadow p-3 mb-5 bg-white rounded" >
+    <div class="row">
+        <div class="col-md-12 col-lg-4">
+            <div class="container-hotel-image">
+                <img [src]="data.image | imagen:'hotels'"  class="hotel-image" >
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-5 container-hotel-data">
+            <div class="container-hotel-name">
+                   <h4>{{ data.name }}</h4> 
+            </div>
+                <div class="row">
+                    <div class="col-12 description-hotel">
+                            <app-stars wd="30"  *ngFor="let star of ' '.repeat(data.stars).split('')"></app-stars>
+                    </div>
+                    <div class="col-12 description-hotel">
+                            <app-amenities style="padding: 5px;" *ngFor="let amenitie of data.amenities.sort()" [amenitie]="amenitie"></app-amenities>
+                    </div>
+                </div>
+                
+        </div>
+        <div class="col-md-12 col-lg-3 justify-content-center align-self-center">
+                <div  class="hotel-price">
+                    <div  class="price-text">
+                        <p>
+                            <span >Precio por noche por </span>
+                            <br>
+                            <span>habitación</span>
+                        </p>
+                    </div>
+                    <div  class="price-container">
+                        <p  >
+                            <span  class="price_currency">ARS&nbsp;</span>
+                            <span  class="price">{{data.price}}</span>
+                        </p>
+                    </div>
+                        <button type="button" (click)="openHotel()" class="btn btn-primary bg-am btn-lg btn-block">Ver hotel</button>
+                    
+                </div>
+        </div>
+    </div>
+</div>

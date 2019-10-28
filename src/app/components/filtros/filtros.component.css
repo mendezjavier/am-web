@@ -1,0 +1,53 @@
+.filter-icon {
+    float: right;
+}
+.header-filter {
+    line-height: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 0;
+    padding: 16px 0 16px 0;
+    color: #3862f7;
+    display: block;
+    cursor: pointer;
+}
+
+.beg-icon {
+    padding-right: 10px;
+
+}
+
+.container-filter {
+    border-radius: 0;
+    border: none;
+    padding: 16px;
+    display: block;
+}
+
+.filter-check {
+    padding-bottom: 15px;
+}
+
+.filter-label {
+    font-weight: 600;
+}
+
+.container-filter-card {
+    margin-bottom: 20px;
+}
+
+.hide-panel {
+    display: none;
+}
+.search-icon {
+    margin-right: 10px;
+    float: left;
+    height: 20px;
+    width: 20px;
+    --webkit-mask: url('../../../assets/icons/filters/search.svg') no-repeat center;
+    mask: url('../../../assets/icons/filters/search.svg') no-repeat center;
+    background-color: rgb(20, 136, 214);
+  }
+.show-panel {
+    display: block;
+}

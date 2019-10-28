@@ -1,0 +1,8 @@
+.star-icon {
+    padding: 10px;
+    float: left;
+    
+    --webkit-mask: url('../../../assets/icons/filters/star.svg') no-repeat center;
+    mask: url('../../../assets/icons/filters/star.svg') no-repeat center;
+    background-color: rgb(214, 185, 20);
+  }

@@ -1,0 +1,15 @@
+.container-hotel-data {
+    border-right: 0px;
+    margin: 30px;
+}
+
+.hotel-image {
+    height: 450px;
+
+}
+
+@media (max-width: 900px) {
+    .container-hotel-data {
+        border-bottom: 0px;
+    }
+  }
