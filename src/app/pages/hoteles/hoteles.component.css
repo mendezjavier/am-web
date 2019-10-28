@@ -1,0 +1,6 @@
+@media (max-width: 900px) {
+    .filter-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }

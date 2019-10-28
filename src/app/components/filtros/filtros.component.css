@@ -51,3 +51,14 @@
 .show-panel {
     display: block;
 }
+
+
+@media (max-width: 900px) {
+    .card-header {
+        text-align: center;
+    }
+
+    .icon-filter-header {
+        float: none;
+    }
+  }
